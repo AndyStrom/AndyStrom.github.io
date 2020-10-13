@@ -1,0 +1,14 @@
+<section class="widget tagCloud">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "tag" }}
+    </div>
+    <h1 class="widget-title">{{ T "widgetTagCloudTitle" }}</h1>
+
+    <div class="tagCloud-tags">
+        {{ range first .Site.Params.widgets.tagCloud.limit .Site.Taxonomies.tags.ByCount }}
+            <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}">
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+    </div>
+</section>
